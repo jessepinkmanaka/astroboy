@@ -26,9 +26,7 @@ SECRET_KEY = 'django-insecure-qc128uk-ez%mkf3jil*0b1jhu^9og(q(7if728hw!pj_l7)yh)
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'astroboy-production.up.railway.app',
-    '127.0.0.1',
-    'localhost',
+    '*'
 ]
 
 
