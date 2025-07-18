@@ -124,7 +124,9 @@ STATICFILES_DIRS = [BASE_DIR / "static"]
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
-
+CSRF_TRUSTED_ORIGINS = [
+    'https://astroboy-production.up.railway.app',
+]
 
 
 # Default primary key field type
