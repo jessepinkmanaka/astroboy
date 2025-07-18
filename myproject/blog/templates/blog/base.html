@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astro Terminal</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.5.0/github-markdown.min.css">
+    <style>
+        body {
+            font-family: 'Share Tech Mono', monospace;
+            background: linear-gradient(135deg, #0f2027 0%, #2c5364 100%);
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.7;
+        }
+        .neon {
+            color: #fff;
+            text-shadow: 0 0 8px #00ffe7, 0 0 16px #00ffe7, 0 0 32px #00ffe7;
+        }
+    </style>
+    <script>
+        // Add random stars for cosmic effect
+        document.addEventListener('DOMContentLoaded', function() {
+            for (let i = 0; i < 80; i++) {
+                let star = document.createElement('div');
+                star.className = 'star';
+                star.style.top = Math.random() * 100 + 'vh';
+                star.style.left = Math.random() * 100 + 'vw';
+                star.style.opacity = Math.random();
+                document.body.appendChild(star);
+            }
+        });
+    </script>
+</head>
+<body class="bg-gray-900 text-white relative">
+    <nav class="bg-black bg-opacity-80 p-4 shadow-lg border-b-2 border-cyan-400">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="/" class="text-3xl font-extrabold neon tracking-widest">Astro Terminal</a>
+            <div class="space-x-6 text-lg">
+                <a href="/" class="hover:text-cyan-400 transition">Home</a>
+                <a href="/about/" class="hover:text-cyan-400 transition">About Me</a>
+                <a href="/admin/" class="hover:text-cyan-400 transition">Admin</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container mx-auto p-4">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>
